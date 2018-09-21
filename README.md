@@ -1,6 +1,6 @@
 # `@pascaliske/dynamic-components`
 
-[![Build Status](https://travis-ci.com/pascaliske/dynamic-components.svg?branch=master)](https://travis-ci.com/pascaliske/dynamic-components)
+[![Build Status](https://travis-ci.com/pascaliske/dynamic-components.svg?branch=master)](https://travis-ci.com/pascaliske/dynamic-components) [![Greenkeeper badge](https://badges.greenkeeper.io/pascaliske/dynamic-components.svg)](https://greenkeeper.io/)
 
 ## Installation
 
