@@ -1,0 +1,77 @@
+{
+  "name": "dynamic-components",
+  "description": "Easier dynamic component injections in Angular 6+.",
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "Pascal Iske",
+    "email": "info@pascal-iske.de",
+    "url": "https://pascal-iske.de"
+  },
+  "repository": {
+    "url": "https://github.com/pascaliske/dynamic-components.git",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/pascaliske/dynamic-components/issues"
+  },
+  "private": true,
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve dynamic-components-demo",
+    "build": "ng build",
+    "postbuild": "cp {README,LICENSE}.md dist/dynamic-components/",
+    "lint": "ng lint",
+    "format": "prettier --write \"{src,projects}/**/*.ts\"",
+    "precommit": "lint-staged",
+    "link": "yarn run build && cd dist/dynamic-components && yarn link",
+    "unlink": "cd dist/dynamic-components && yarn unlink"
+  },
+  "greenkeeper": {
+    "ignore": [
+      "typescript"
+    ]
+  },
+  "lint-staged": {
+    "{src,projects}/**/*.ts": [
+      "yarn run lint",
+      "yarn run format",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@angular/animations": "^6.1.8",
+    "@angular/common": "^6.1.8",
+    "@angular/compiler": "^6.1.8",
+    "@angular/core": "^6.1.8",
+    "@angular/forms": "^6.1.8",
+    "@angular/http": "^6.1.8",
+    "@angular/platform-browser": "^6.1.8",
+    "@angular/platform-browser-dynamic": "^6.1.8",
+    "@angular/router": "^6.1.8",
+    "core-js": "^2.5.7",
+    "rxjs": "^6.3.2",
+    "zone.js": "^0.8.26"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.8.3",
+    "@angular-devkit/build-ng-packagr": "~0.8.3",
+    "@angular/cli": "~6.2.3",
+    "@angular/compiler-cli": "^6.1.8",
+    "@angular/language-service": "^6.1.8",
+    "@types/lodash-es": "^4.17.1",
+    "@types/node": "~10.10.2",
+    "codelyzer": "~4.4.4",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.3.0",
+    "ng-packagr": "^4.2.0",
+    "prettier": "^1.14.3",
+    "rxjs-tslint-rules": "^4.8.0",
+    "ts-node": "~7.0.1",
+    "tsickle": "^0.33.0",
+    "tslib": "^1.9.3",
+    "tslint": "~5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "typescript": "~2.9.2"
+  }
+}
