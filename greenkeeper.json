@@ -1,0 +1,11 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "package.json",
+        "projects/dynamic-components/ng-package.json",
+        "projects/dynamic-components/package.json"
+      ]
+    }
+  }
+}
