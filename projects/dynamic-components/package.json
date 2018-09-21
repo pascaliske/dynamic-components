@@ -15,6 +15,9 @@
   "bugs": {
     "url": "https://github.com/pascaliske/dynamic-components/issues"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "@angular/common": "^6.1.8",
     "@angular/core": "^6.1.8"
