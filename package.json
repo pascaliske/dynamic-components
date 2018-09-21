@@ -20,7 +20,7 @@
     "ng": "ng",
     "start": "ng serve dynamic-components-demo",
     "build": "ng build",
-    "postbuild": "cp {README,LICENSE}.md dist/dynamic-components/",
+    "postbuild": "cp README.md dist/dynamic-components/README.md && cp LICENSE.md dist/dynamic-components/LICENSE.md",
     "lint": "ng lint",
     "format": "prettier --write \"{src,projects}/**/*.ts\"",
     "precommit": "lint-staged",
