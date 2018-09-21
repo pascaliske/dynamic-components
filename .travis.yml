@@ -1,0 +1,34 @@
+language: node_js
+node_js:
+  - '8'
+  - '9'
+  - '10'
+before_install: yarn global add greenkeeper-lockfile@1
+install:
+  - yarn install
+before_script: greenkeeper-lockfile-update
+script:
+  - yarn run lint
+  - yarn run build --prod
+after_script: greenkeeper-lockfile-upload
+before_deploy:
+  - cd dist/dynamic-components
+deploy:
+  provider: npm
+  email: info@pascal-iske.de
+  api_key:
+    secure: LTvJtCqH4iaEOhQj02Xe6Tw5aq/wscJZLPZdT0UQ76s5mZwFFRkZj4jUJP0F7ZUjxjurx+PRLw97llRq24VYQ5BCakOZCLD+/0J1P62lt0y7OSUDnG4LQQKIvRI6TBBmqIKnnpGJ5xdRckXrQdawfuhdUUU9iYnKHIkdlTwOmmMXv7gWHa18Vja2HwbK5ksBcR0dwsYKp3wPLzsOPeR4gnjCfh2V7lsbf44m6PNRXTusgJw0kcg9d4N7AcqgYjdrCYy2F/B/+E/vfeF3oENOiI+l8tbxzOc4+hbIQmidPk+hewStKbPqsY5fIz3KfKeCX5jZyUhafcg+lA+UqrvVHIj39e6xOdnfko4+uAfA/YTxtzbhPnFif5b1oPBIuxNCv1IUbhbd8dHolmUn6cB2+V5b/wo5LgfBQOAOWalgW6D1iVijRZ/2kengvUzJBHw7aAxmJ327rkYc0VO1twQj0BUMkzpJbRWyQL+ydqt2KakRQ44T/+accErwoBNIj8VY8v9cDi4G3zbpSC0+xCbfbPsHJ3z2jnpERVKrSiEi07QZ9lor0ogwspL7WJZygfDcytUsTqqu7AhJT05J0O3foIgW1HnlWXvXXuvrIo1g2DT7DaI6WlmkLREK50h7p+poGmh/fkOZ5lZMtdJgn6QzWYrcC2MTb3lfpNauaNLKlBA=
+  skip_cleanup: true
+  on:
+    tags: true
+    branch: master
+    node: 10
+env:
+  global:
+    - secure: 2nBmHPxGeuA9vf6z+t2W+rdEr5/wRKubytwlntGnX4QdDIUmR33DVmD+ErCMfaNzJv15VUy0z56NpxCqfIMlfmT3mHOPmitPeHryBS8uyq427RmyYmGLLSKSrwuMFIn7WKddr8Ce/lJWDDbbIjBlCUYD/IyvJ8pJ0Lz0rhFQXyUNQQCVr3EDYSwnYa/FqD2OAd45pPVOC+dzZOpPX3NBwVDY0fFfUIrtAe8kzNJIE068FQeInFje/RXUKUt742NOVtJwJniZjfUj+VzTBfKPn7mrlMxmB6drnGi6K1VrnWp6Kq8Fhj2FeMy0tFTDNo/U2x+DZ0a3FjiuEeYmH8/Pq7pP4z5We8WFxkZbiTu43Cph/c+DjfuWV1CKByC7MYwHnTXyTxSRu7CKbUJyD3kQO+CPFPm+zAmwXxKhyufTGB9liVqr5AU1JPhAKFRlZ2+Met2aK8y0H+x1R0bZCUNDYahm+6loBQES1X+0xU7s79a6Zk/q3GJC9zREu/oXRopvFJn+Vx92CF6v4kHJj8Ef2UsKricSNV65kbIXbVkxRNG61mMSNQg/AjaL9ykMwQERTzG7zOQp5k1krUf5wOprs4zIs2WhkNZUU5sDYAwf/+dgKQDeBcw4mvFaAQ7vqxrWdSjtxgZwHycU1lv1sOlfQ0TJ4wUMiI50+WIzIXohFzU=
+notifications:
+  slack:
+    rooms:
+      - secure: eSR4Skvyo51dKHyvfd2XDDOS1Ee/B8BsqrMO5XTZxrl2HQbcymUTpoaaz9B+WZs03LrYCJvbc7+5RFAEM/IMGJxuZ7UwgccksROeymz4we4rFQxpH8F5G6HumlncTg07PGg1t+D4ylah6TDT5iBgjz4OBf5gk2wO3fIjMckl+HRkKXQ/CLSfh8tW5FhTV2pHBng8pshnqx2zZT4wQdUGDabRlZomKwLVPhNbO2gpEykDGN5fiSILK+DY73wNUdcnd0/xAIGQ/dO855pvhwj4tBdvDhCRbroRUHUTQX7h4dgoDXuglNEtXcwbXG9dVp9dr30pqXiC2k6g8Sp8l/85x7cIxNRo1kuDFxvMfA2cSXQ3YVeRkAd+pCLJcIVnZWnA4WM5zsJuhQRoTp4uWO1LO31r1iJcGbqJu114ul/w/3TRncclCqCsp+wc3oIVSdm/zPEFNrxLhntLMwVN5WRi7pZPsws1XTdhOfQh+85grbuoyicvgS4f4Vpf1sFUMdcIeHB/ugY/SPVL85JSpdPo82a6Jb3mrL4kezZJwb9T5h1ukU37YMYqfD6fA/d7xfAINMz3gnJy48/+nP0GP3kUEeC//fHkyAgStDUOoo6WB8vvcGvBcCi4zlubcqucbRe2seDSd2TYda9PYkxvWpcsr3mSjgtcM5iRtIhUnGryPSs=
+    on_success: change
+    on_failure: always
