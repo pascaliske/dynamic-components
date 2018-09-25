@@ -60,7 +60,7 @@
     "@angular/compiler-cli": "^6.1.8",
     "@angular/language-service": "^6.1.8",
     "@types/lodash-es": "^4.17.1",
-    "@types/node": "~10.10.2",
+    "@types/node": "~10.11.0",
     "codelyzer": "~4.4.4",
     "husky": "^0.14.3",
     "lint-staged": "^7.3.0",
