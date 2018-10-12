@@ -8,7 +8,7 @@ import {
     ComponentRef,
 } from '@angular/core'
 import { DynamicComponentsDirective } from './dynamic-components.directive'
-import { upperFirst, camelCase } from './helpers'
+import { upperFirst, camelCase, reverse } from './helpers'
 import { ComponentManifest } from './typings'
 
 @Component({
@@ -43,7 +43,7 @@ export class DynamicComponentsComponent implements OnInit {
      * Triggers the rendering.
      */
     public ngOnInit(): void {
-        this.components.reverse().map(component => this.resolveComponent(component))
+        reverse(this.components).map(component => this.resolveComponent(component))
     }
 
     /**
@@ -57,7 +57,7 @@ export class DynamicComponentsComponent implements OnInit {
         const component = this.resolveComponentFactory(id)
 
         if (!component) {
-            console.log(`Unkown component: ${id}`)
+            console.log(`Unknown component: ${id}`)
             return
         }
 

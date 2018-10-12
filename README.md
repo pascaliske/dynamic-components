@@ -1,6 +1,6 @@
 # `@pascaliske/dynamic-components`
 
-[![Build Status](https://travis-ci.com/pascaliske/dynamic-components.svg?branch=master)](https://travis-ci.com/pascaliske/dynamic-components) [![Greenkeeper badge](https://badges.greenkeeper.io/pascaliske/dynamic-components.svg)](https://greenkeeper.io/)
+[![npm (scoped)](https://img.shields.io/npm/v/@pascaliske/dynamic-components.svg?style=flat-square)](https://www.npmjs.com/package/@pascaliske/dynamic-components) [![GitHub Tag](https://img.shields.io/github/tag/pascaliske/dynamic-components.svg?style=flat-square)](https://github.com/pascaliske/dynamic-components) [![Travis CI](https://img.shields.io/travis/com/pascaliske/dynamic-components/master.svg?style=flat-square)](https://travis-ci.com/pascaliske/dynamic-components) [![Greenkeeper](https://badges.greenkeeper.io/pascaliske/dynamic-components.svg?style=flat-square)](https://greenkeeper.io) [![Awesome Badges](https://img.shields.io/badge/badges-awesome-green.svg?style=flat-square)](https://github.com/Naereen/badges)
 
 ## Installation
 
