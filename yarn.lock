@@ -69,14 +69,14 @@
   optionalDependencies:
     node-sass "4.9.3"
 
-"@angular-devkit/build-ng-packagr@~0.8.3":
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-ng-packagr/-/build-ng-packagr-0.8.3.tgz#c50c7689ed8b3b592033e1763c01e05b4ce3a2f1"
+"@angular-devkit/build-ng-packagr@~0.10.2":
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-ng-packagr/-/build-ng-packagr-0.10.2.tgz#e4936c09f4673e085b89b05cb44b3b8d246ba0fd"
   dependencies:
-    "@angular-devkit/architect" "0.8.3"
-    "@angular-devkit/core" "0.8.3"
-    rxjs "~6.2.0"
-    semver "^5.3.0"
+    "@angular-devkit/architect" "0.10.2"
+    "@angular-devkit/core" "7.0.2"
+    rxjs "6.3.3"
+    semver "5.5.1"
 
 "@angular-devkit/build-optimizer@0.10.2":
   version "0.10.2"
@@ -5346,6 +5346,10 @@ source-map@0.1.x:
 source-map@0.5.6:
   version "0.5.6"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.6.tgz#75ce38f52bf0733c5a7f0c118d81334a2bb5f412"
+
+source-map@0.7.3, source-map@^0.7.3:
+  version "0.7.3"
+  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.7.3.tgz#5302f8169031735226544092e64981f751750383"
 
 source-map@0.7.3, source-map@^0.7.3:
   version "0.7.3"
