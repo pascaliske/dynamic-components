@@ -54,13 +54,13 @@
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.8.3",
-    "@angular-devkit/build-ng-packagr": "~0.8.3",
+    "@angular-devkit/build-angular": "~0.10.2",
+    "@angular-devkit/build-ng-packagr": "~0.10.2",
     "@angular/cli": "~6.2.3",
     "@angular/compiler-cli": "^6.1.8",
     "@angular/language-service": "^6.1.8",
     "@types/lodash-es": "^4.17.1",
-    "@types/node": "~10.11.0",
+    "@types/node": "~10.12.0",
     "codelyzer": "~4.4.4",
     "husky": "^1.0.0",
     "lint-staged": "^7.3.0",
