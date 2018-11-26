@@ -1,7 +1,7 @@
 {
   "name": "@pascaliske/dynamic-components",
   "description": "Easier dynamic component injections in Angular 6+.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "author": {
     "name": "Pascal Iske",
