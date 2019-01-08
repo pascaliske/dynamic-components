@@ -7,7 +7,7 @@ import { ComponentManifest } from '@pascaliske/dynamic-components'
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-    public components: Array<ComponentManifest> = [
+    public components: ComponentManifest[] = [
         {
             componentName: 'cmp-headline-h1',
             params: {

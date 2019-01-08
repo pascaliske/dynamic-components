@@ -34,6 +34,6 @@ export function camelCase(value: string): string {
  * @param array - The original array
  * @returns The reversed version of the given array.
  */
-export function reverse<T>(array: Array<T>): Array<T> {
+export function reverse<T = any>(array: T[]): T[] {
     return array.slice().reverse()
 }
