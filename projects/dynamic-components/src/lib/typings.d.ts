@@ -3,7 +3,7 @@
  */
 export interface ComponentManifest {
     componentName: string
-    children?: Array<ComponentManifest>
+    children?: ComponentManifest[]
     params?: {
         [key: string]: any
     }

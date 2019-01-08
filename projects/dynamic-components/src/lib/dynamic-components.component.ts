@@ -22,7 +22,7 @@ export class DynamicComponentsComponent implements OnInit {
      * @param components - Array of component manifests
      */
     @Input()
-    public components: Array<ComponentManifest> = []
+    public components: ComponentManifest[] = []
 
     /**
      * The host reference where the components will be rendered.
@@ -62,7 +62,7 @@ export class DynamicComponentsComponent implements OnInit {
         }
 
         // pre resolve children components
-        let children: Array<any>
+        let children: any[]
         if (manifest.children && manifest.children.length > 0) {
             children = manifest.children.map(child => this.resolveComponent(child))
             children = children.filter(child => child !== undefined)
@@ -114,7 +114,7 @@ export class DynamicComponentsComponent implements OnInit {
      * @returns The component factory
      */
     private resolveComponentFactory(name: string): any {
-        const factories: Array<ComponentFactory<any>> = Array.from(
+        const factories: ComponentFactory<any>[] = Array.from(
             this.componentFactoryResolver['_factories'].keys(),
         )
 

@@ -15,9 +15,7 @@ export class DynamicComponentsModule {
      * @param components - Array of components for rendering
      * @returns - The module with providers and entry components
      */
-    public static forRoot(
-        components: Array<Type<any>>,
-    ): ModuleWithProviders<DynamicComponentsModule> {
+    public static forRoot(components: Type<any>[]): ModuleWithProviders<DynamicComponentsModule> {
         return {
             ngModule: DynamicComponentsModule,
             providers: [

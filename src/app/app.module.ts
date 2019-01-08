@@ -24,7 +24,6 @@ import { AppComponent } from './app.component'
         HeadlinesModule,
     ],
     declarations: [AppComponent],
-    providers: [],
     bootstrap: [AppComponent],
 })
 export class AppModule {}
