@@ -33,13 +33,12 @@
   },
   "husky": {
     "hooks": {
-      "precommit": "lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "{src,projects}/**/*.ts": [
-      "yarn run lint",
-      "yarn run format",
+      "prettier --write",
       "git add"
     ]
   },
