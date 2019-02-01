@@ -31,17 +31,6 @@
       "typescript"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "{src,projects}/**/*.ts": [
-      "prettier --write",
-      "git add"
-    ]
-  },
   "dependencies": {
     "@angular/animations": "^7.2.3",
     "@angular/common": "^7.2.3",
