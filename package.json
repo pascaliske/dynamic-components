@@ -23,6 +23,7 @@
     "postbuild": "cp README.md dist/dynamic-components/README.md && cp LICENSE.md dist/dynamic-components/LICENSE.md",
     "lint": "ng lint",
     "format": "prettier --write \"{src,projects}/**/*.ts\"",
+    "changelog": "standard-changelog --release-count 1",
     "link": "yarn run build && cd dist/dynamic-components && yarn link",
     "unlink": "cd dist/dynamic-components && yarn unlink"
   },
@@ -61,6 +62,7 @@
     "ng-packagr": "^4.7.0",
     "prettier": "^1.16.3",
     "rxjs-tslint-rules": "^4.16.2",
+    "standard-changelog": "^2.0.6",
     "ts-node": "~8.0.2",
     "tsickle": "^0.34.2",
     "tslib": "^1.9.3",
