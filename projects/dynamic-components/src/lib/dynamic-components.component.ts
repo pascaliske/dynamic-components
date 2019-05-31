@@ -4,7 +4,6 @@ import {
     Input,
     ViewContainerRef,
     ComponentFactoryResolver,
-    ComponentFactory,
     ComponentRef,
 } from '@angular/core'
 import { upperFirst, camelCase, reverse } from './helpers'
@@ -77,10 +76,12 @@ export class DynamicComponentsComponent implements OnInit {
         )
 
         // inject params to instance
-        if (manifest.params && Object.entries(manifest.params).length > 0) {
-            Object.entries(manifest.params).forEach(([key, value]) => {
-                ref.instance[key] = value
-            })
+        if (manifest.params && Object.keys(manifest.params).length > 0) {
+            for (const key in manifest.params) {
+                if (manifest.params.hasOwnProperty(key)) {
+                    ref.instance[key] = manifest.params[key]
+                }
+            }
         }
 
         return ref
@@ -112,10 +113,8 @@ export class DynamicComponentsComponent implements OnInit {
      * @returns The component factory
      */
     private resolveComponentFactory(name: string): any {
-        const factories: ComponentFactory<any>[] = Array.from(
-            this.componentFactoryResolver['_factories'].keys(),
-        )
-
-        return factories.find((item: any) => item.cmpName === name)
+        return this.componentFactoryResolver['_factories'].keys().find((item: any) => {
+            return item.cmpName === name
+        })
     }
 }
