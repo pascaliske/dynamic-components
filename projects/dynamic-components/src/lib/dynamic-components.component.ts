@@ -2,14 +2,22 @@ import {
     Component,
     OnInit,
     Input,
-    ViewChild,
+    ViewContainerRef,
     ComponentFactoryResolver,
-    ComponentFactory,
     ComponentRef,
 } from '@angular/core'
-import { DynamicComponentsDirective } from './dynamic-components.directive'
 import { upperFirst, camelCase, reverse } from './helpers'
-import { ComponentManifest } from './typings'
+
+/**
+ * Interface describing a component to be dynamically created.
+ */
+export interface ComponentManifest {
+    componentName: string
+    children?: ComponentManifest[]
+    params?: {
+        [key: string]: any
+    }
+}
 
 @Component({
     selector: 'cmp-dynamic-components',
@@ -25,25 +33,24 @@ export class DynamicComponentsComponent implements OnInit {
     public components: ComponentManifest[] = []
 
     /**
-     * The host reference where the components will be rendered.
-     *
-     * @param hostRef - The host directive
-     */
-    @ViewChild(DynamicComponentsDirective)
-    public hostRef: DynamicComponentsDirective
-
-    /**
      * Initializes the component.
      *
      * @param componentFactoryResolver - The component factory resolver service
      */
-    public constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
+    public constructor(
+        private viewContainerRef: ViewContainerRef,
+        private componentFactoryResolver: ComponentFactoryResolver,
+    ) {}
 
     /**
      * Triggers the rendering.
      */
     public ngOnInit(): void {
-        reverse(this.components).map(component => this.resolveComponent(component))
+        this.viewContainerRef.clear()
+
+        for (const component of reverse(this.components)) {
+            this.resolveComponent(component)
+        }
     }
 
     /**
@@ -70,22 +77,24 @@ export class DynamicComponentsComponent implements OnInit {
         }
 
         // resolve actual factory and create its component
-        const componentFactory = this.componentFactoryResolver.resolveComponentFactory(component)
-        const componentRef: ComponentRef<any> = this.hostRef.viewContainerRef.createComponent(
-            componentFactory,
+        const factory = this.componentFactoryResolver.resolveComponentFactory(component)
+        const ref: ComponentRef<any> = this.viewContainerRef.createComponent(
+            factory,
             0,
             undefined,
             [children],
         )
 
         // inject params to instance
-        if (manifest.params && Object.entries(manifest.params).length > 0) {
-            Object.entries(manifest.params).forEach(([key, value]) => {
-                componentRef.instance[key] = value
-            })
+        if (manifest.params && Object.keys(manifest.params).length > 0) {
+            for (const key in manifest.params) {
+                if (manifest.params.hasOwnProperty(key)) {
+                    ref.instance[key] = manifest.params[key]
+                }
+            }
         }
 
-        return componentRef
+        return ref
     }
 
     /**
@@ -114,10 +123,8 @@ export class DynamicComponentsComponent implements OnInit {
      * @returns The component factory
      */
     private resolveComponentFactory(name: string): any {
-        const factories: ComponentFactory<any>[] = Array.from(
-            this.componentFactoryResolver['_factories'].keys(),
-        )
-
-        return factories.find((item: any) => item.cmpName === name)
+        return Array.from(this.componentFactoryResolver['_factories'].keys()).find((item: any) => {
+            return item.cmpName === name
+        })
     }
 }

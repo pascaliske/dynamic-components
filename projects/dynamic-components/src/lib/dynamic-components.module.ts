@@ -1,11 +1,10 @@
 import { NgModule, Type, ModuleWithProviders, ANALYZE_FOR_ENTRY_COMPONENTS } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { DynamicComponentsComponent } from './dynamic-components.component'
-import { DynamicComponentsDirective } from './dynamic-components.directive'
 
 @NgModule({
     imports: [CommonModule],
-    declarations: [DynamicComponentsComponent, DynamicComponentsDirective],
+    declarations: [DynamicComponentsComponent],
     exports: [DynamicComponentsComponent],
 })
 export class DynamicComponentsModule {
