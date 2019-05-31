@@ -123,7 +123,7 @@ export class DynamicComponentsComponent implements OnInit {
      * @returns The component factory
      */
     private resolveComponentFactory(name: string): any {
-        return this.componentFactoryResolver['_factories'].keys().find((item: any) => {
+        return Array.from(this.componentFactoryResolver['_factories'].keys()).find((item: any) => {
             return item.cmpName === name
         })
     }
