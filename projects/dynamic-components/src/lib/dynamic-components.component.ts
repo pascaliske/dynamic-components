@@ -7,7 +7,17 @@ import {
     ComponentRef,
 } from '@angular/core'
 import { upperFirst, camelCase, reverse } from './helpers'
-import { ComponentManifest } from './typings'
+
+/**
+ * Interface describing a component to be dynamically created.
+ */
+export interface ComponentManifest {
+    componentName: string
+    children?: ComponentManifest[]
+    params?: {
+        [key: string]: any
+    }
+}
 
 @Component({
     selector: 'cmp-dynamic-components',
