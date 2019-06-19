@@ -60,7 +60,7 @@
     "lint-staged": "^8.2.1",
     "ng-packagr": "^5.3.0",
     "prettier": "^1.18.2",
-    "rxjs-tslint-rules": "^4.24.1",
+    "rxjs-tslint-rules": "^4.24.2",
     "standard-changelog": "^2.0.11",
     "ts-node": "~8.3.0",
     "tsickle": "^0.35.0",
