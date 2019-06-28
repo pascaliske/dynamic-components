@@ -1,7 +1,7 @@
 {
   "name": "dynamic-components",
   "description": "Easier dynamic component injections in Angular 6+.",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "license": "MIT",
   "author": {
     "name": "Pascal Iske",
@@ -46,26 +46,26 @@
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.800.3",
-    "@angular-devkit/build-ng-packagr": "~0.800.3",
-    "@angular/cli": "~8.0.3",
+    "@angular-devkit/build-angular": "~0.800.6",
+    "@angular-devkit/build-ng-packagr": "~0.800.6",
+    "@angular/cli": "~8.0.6",
     "@angular/compiler-cli": "^8.0.1",
-    "@angular/language-service": "^8.0.1",
+    "@angular/language-service": "^8.0.3",
     "@commitlint/cli": "^8.0.0",
     "@commitlint/config-conventional": "^8.0.0",
     "@types/lodash-es": "^4.17.3",
-    "@types/node": "~12.0.8",
+    "@types/node": "~12.0.10",
     "codelyzer": "^5.1.0",
-    "husky": "^2.4.1",
+    "husky": "^2.7.0",
     "lint-staged": "^8.2.1",
     "ng-packagr": "^5.3.0",
     "prettier": "^1.18.2",
-    "rxjs-tslint-rules": "^4.24.0",
+    "rxjs-tslint-rules": "^4.24.3",
     "standard-changelog": "^2.0.11",
     "ts-node": "~8.3.0",
     "tsickle": "^0.35.0",
     "tslib": "^1.10.0",
-    "tslint": "~5.17.0",
+    "tslint": "~5.18.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "~3.4.5"
   }
