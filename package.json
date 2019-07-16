@@ -52,7 +52,7 @@
     "@angular/compiler-cli": "^8.0.1",
     "@angular/language-service": "^8.1.1",
     "@commitlint/cli": "^8.1.0",
-    "@commitlint/config-conventional": "^8.0.0",
+    "@commitlint/config-conventional": "^8.1.0",
     "@types/lodash-es": "^4.17.3",
     "@types/node": "~12.6.3",
     "codelyzer": "^5.1.0",
