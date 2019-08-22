@@ -39,7 +39,7 @@
     "@angular/core": "^8.0.1",
     "@angular/forms": "^8.0.1",
     "@angular/platform-browser": "^8.0.1",
-    "@angular/platform-browser-dynamic": "^8.0.1",
+    "@angular/platform-browser-dynamic": "^8.2.3",
     "@angular/router": "^8.0.1",
     "core-js": "^3.2.1",
     "rxjs": "^6.5.2",
