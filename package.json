@@ -54,7 +54,7 @@
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "@types/lodash-es": "^4.17.3",
-    "@types/node": "~12.7.8",
+    "@types/node": "~12.7.9",
     "codelyzer": "^5.1.2",
     "husky": "^3.0.7",
     "lint-staged": "^9.4.1",
