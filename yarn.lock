@@ -7352,10 +7352,10 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
-rxjs-tslint-rules@^4.27.0:
-  version "4.27.0"
-  resolved "https://registry.yarnpkg.com/rxjs-tslint-rules/-/rxjs-tslint-rules-4.27.0.tgz#312c75b6f5d7839171b985c3fe24f66e3b10755a"
-  integrity sha512-9iXcHaLtC+EdPjTa+Afa8nKnYU3iXyYo1unm5QuQ8noR+oKrY0L+g+1jqKohiSMGRCnxegmeed8NTAmtlaIXBw==
+rxjs-tslint-rules@^4.27.1:
+  version "4.27.1"
+  resolved "https://registry.yarnpkg.com/rxjs-tslint-rules/-/rxjs-tslint-rules-4.27.1.tgz#9f646ba2f768672bfdc4b51fc0e6c1a062412db1"
+  integrity sha512-LMTT0QeGKqBI+oOcWhnKTclovHFL9NrzviNeDc+iPRJpNsvq8ZN/nBaWAhFhnNtqMLX2SgWrhCKJcW6lAyxAYA==
   dependencies:
     "@phenomnomnominal/tsquery" "^4.0.0"
     decamelize "^3.0.0"
