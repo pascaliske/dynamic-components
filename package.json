@@ -56,7 +56,7 @@
     "@types/lodash-es": "^4.17.3",
     "@types/node": "~13.7.1",
     "codelyzer": "^5.2.1",
-    "husky": "^4.2.2",
+    "husky": "^4.2.3",
     "lint-staged": "^10.0.7",
     "ng-packagr": "^5.7.1",
     "prettier": "^1.19.1",
