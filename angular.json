@@ -8,7 +8,7 @@
   },
   "schematics": {
     "@schematics/angular:component": {
-      "styleext": "scss"
+      "style": "scss"
     }
   },
   "projects": {
@@ -22,6 +22,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/dynamic-components-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -44,6 +45,12 @@
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -99,7 +106,8 @@
           },
           "configurations": {
             "production": {
-              "project": "projects/dynamic-components/ng-package.prod.json"
+              "project": "projects/dynamic-components/ng-package.prod.json",
+              "tsConfig": "projects/dynamic-components/tsconfig.lib.prod.json"
             }
           }
         },
