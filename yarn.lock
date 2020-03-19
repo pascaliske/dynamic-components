@@ -7389,10 +7389,10 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
-rxjs-tslint-rules@^4.29.1:
-  version "4.29.1"
-  resolved "https://registry.yarnpkg.com/rxjs-tslint-rules/-/rxjs-tslint-rules-4.29.1.tgz#cb1abfaa43f167b5c40349ae8af1c87beeef46d8"
-  integrity sha512-tAlmjEPSpZEidZOkUh80Tt0WYt9pgo2d3sKd3Z/Jo2vHLgy0CkZWFG9IQKPsQfAiZHY6KTxrrGSX+g/7ciVxCg==
+rxjs-tslint-rules@^4.29.2:
+  version "4.29.2"
+  resolved "https://registry.yarnpkg.com/rxjs-tslint-rules/-/rxjs-tslint-rules-4.29.2.tgz#52eb5f4d60f2a5dda2c3c51905c90c79e7ddeed2"
+  integrity sha512-1qMw8kVSe8dzPF14j2z+euxgfRdm4VGEOkaApKY8YXsmUOvQVssJVuvWpq/OfFWcy0TxC+woIIpK1rDJ1Ykmmw==
   dependencies:
     "@phenomnomnominal/tsquery" "^4.0.0"
     decamelize "^3.0.0"
@@ -7400,7 +7400,7 @@ rxjs-tslint-rules@^4.29.1:
     semver "^7.0.0"
     tslib "^1.8.0"
     tsutils "^3.0.0"
-    tsutils-etc "^1.1.0"
+    tsutils-etc "^1.2.2"
 
 rxjs@6.4.0:
   version "6.4.0"
@@ -8465,10 +8465,10 @@ tslint@~5.20.1:
     tslib "^1.8.0"
     tsutils "^2.29.0"
 
-tsutils-etc@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/tsutils-etc/-/tsutils-etc-1.1.0.tgz#82ce1c92da29e07d3cde95692d5c5e8dbdc92fd0"
-  integrity sha512-pJlLtLmQPUyGHqY/Pq6EGnpGmQCnnTDZetQ7eWkeQ5xaw4GtfcR1Zt7HMKFHGDDp53HzQfbqQ+7ps6iJbfa9Hw==
+tsutils-etc@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/tsutils-etc/-/tsutils-etc-1.2.2.tgz#cdeeb777574a5c1b15b27658cb8424f7f7139831"
+  integrity sha512-5g2cXpD1OoVc/MLZxh5PuHXhlnYQmuRiW66e1n91j+2J/Pw5lfmVcZAghoDVBdltDXGaCjy8ZttXaX2u/MjHgg==
 
 tsutils@^2.29.0:
   version "2.29.0"
