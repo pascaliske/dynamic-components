@@ -1,27 +1,28 @@
 import {
     Component,
-    OnInit,
     Input,
+    Output,
+    EventEmitter,
     ViewContainerRef,
     ComponentFactoryResolver,
-    ComponentRef,
 } from '@angular/core'
+// tslint:disable-next-line:no-duplicate-imports
+import { OnInit, ComponentRef, ɵComponentType } from '@angular/core'
 import { upperFirst, camelCase, reverse } from './helpers'
 
 /**
  * Interface describing a component to be dynamically created.
  */
 export interface ComponentManifest {
+    importer: () => Promise<any>
     componentName: string
+    params?: Record<string, any>
     children?: ComponentManifest[]
-    params?: {
-        [key: string]: any
-    }
 }
 
 @Component({
     selector: 'cmp-dynamic-components',
-    template: '<ng-template dynamic-components-host></ng-template>',
+    template: '',
 })
 export class DynamicComponentsComponent implements OnInit {
     /**
@@ -33,8 +34,15 @@ export class DynamicComponentsComponent implements OnInit {
     public components: ComponentManifest[] = []
 
     /**
+     * Fired once when all components got rendered.
+     */
+    @Output()
+    public ready: EventEmitter<void> = new EventEmitter()
+
+    /**
      * Initializes the component.
      *
+     * @param viewContainerRef - Reference of the components view container
      * @param componentFactoryResolver - The component factory resolver service
      */
     public constructor(
@@ -48,8 +56,21 @@ export class DynamicComponentsComponent implements OnInit {
     public ngOnInit(): void {
         this.viewContainerRef.clear()
 
-        for (const component of reverse(this.components)) {
-            this.resolveComponent(component)
+        this.resolveAllComponents(reverse(this.components)).then(() => {
+            this.ready.next()
+            this.ready.complete()
+        })
+    }
+
+    /**
+     * Resolves all given component manifests sequentially.
+     *
+     * @param items - An array of manifests to render
+     * @returns A Promise which resolves if all given manifests are rendered
+     */
+    private async resolveAllComponents(items: ComponentManifest[]): Promise<any> {
+        for (const item of items) {
+            await this.resolveComponent(item)
         }
     }
 
@@ -57,11 +78,16 @@ export class DynamicComponentsComponent implements OnInit {
      * Resolve a component and inject it into the host.
      *
      * @param manifest - A manifest describing a dynamic component
-     * @returns A component reference
+     * @returns The host element of the dynamic component
      */
-    private resolveComponent(manifest: ComponentManifest): ComponentRef<any> {
-        const id = this.formatComponentName(manifest.componentName)
-        const component = this.resolveComponentFactory(id)
+    private async resolveComponent({
+        importer,
+        componentName,
+        params,
+        children,
+    }: ComponentManifest): Promise<any> {
+        const id: string = this.formatComponentName(componentName)
+        const { [id]: component }: Record<string, ɵComponentType<any>> = await importer()
 
         if (!component) {
             console.log(`Unknown component: ${id}`)
@@ -69,11 +95,8 @@ export class DynamicComponentsComponent implements OnInit {
         }
 
         // pre resolve children components
-        let children: any[]
-        if (manifest.children && manifest.children.length > 0) {
-            children = manifest.children.map(child => this.resolveComponent(child))
-            children = children.filter(child => child !== undefined)
-            children = children.map(child => child.location.nativeElement)
+        if (children?.length > 0) {
+            children = await this.resolveAllComponents(children)
         }
 
         // resolve actual factory and create its component
@@ -82,49 +105,37 @@ export class DynamicComponentsComponent implements OnInit {
             factory,
             0,
             undefined,
-            [children],
+            [children?.filter(Boolean) ?? []],
         )
 
         // inject params to instance
-        if (manifest.params && Object.keys(manifest.params).length > 0) {
-            for (const key in manifest.params) {
-                if (manifest.params.hasOwnProperty(key)) {
-                    ref.instance[key] = manifest.params[key]
+        if (Object.keys(params)?.length > 0) {
+            for (const key in params) {
+                if (params?.hasOwnProperty(key)) {
+                    ref.instance[key] = params?.[key]
                 }
             }
         }
 
-        return ref
+        return ref?.location?.nativeElement
     }
 
     /**
-     * Format a component name from dashed to camel cased.
+     * Format a component name from dashed format to camel cased.
      *
      * @param name - The dashed component name
      * @returns The camel cased component name
      */
     private formatComponentName(name: string): string {
-        if (!name.includes('-')) {
+        if (!name?.includes('-')) {
             return null
         }
 
         // remove prefix and suffix if available
-        name = name.replace('cmp', '')
-        name = name.replace('component', '')
+        name = name?.replace('cmp', '')
+        name = name?.replace('component', '')
 
         // transform name and append suffix
         return `${upperFirst(camelCase(name))}Component`
-    }
-
-    /**
-     * Resolve a factory by name.
-     *
-     * @param name - The component name as a string
-     * @returns The component factory
-     */
-    private resolveComponentFactory(name: string): any {
-        return Array.from(this.componentFactoryResolver['_factories'].keys()).find((item: any) => {
-            return item.cmpName === name
-        })
     }
 }
