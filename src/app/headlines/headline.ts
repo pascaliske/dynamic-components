@@ -1,6 +1,6 @@
-import { Input, Directive } from '@angular/core'
+import { Component, Input } from '@angular/core'
 
-@Directive()
+@Component({ template: '' }) // tslint:disable-next-line:component-class-suffix
 export class Headline {
     @Input()
     public text: string
