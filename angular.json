@@ -101,8 +101,8 @@
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/dynamic-components/tsconfig.lib.json",
-            "project": "projects/dynamic-components/ng-package.json"
+            "project": "projects/dynamic-components/ng-package.json",
+            "tsConfig": "projects/dynamic-components/tsconfig.lib.json"
           },
           "configurations": {
             "production": {
