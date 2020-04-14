@@ -1,3 +1,4 @@
 <div class="cmp-root">
-    <cmp-dynamic-components [components]="components"></cmp-dynamic-components>
+    <div>state: {{ state }}</div>
+    <cmp-dynamic-components [components]="components" (ready)="state = 'ready'"></cmp-dynamic-components>
 </div>

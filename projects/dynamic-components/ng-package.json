@@ -2,6 +2,7 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/dynamic-components",
   "deleteDestPath": false,
+  "assets": ["README.md", "LICENSE.md", "CHANGELOG.md"],
   "lib": {
     "entryFile": "src/exports.ts"
   }
