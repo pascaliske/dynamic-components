@@ -1,32 +1,14 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "baseUrl": "./",
-    "module": "esnext",
-    "outDir": "./dist/out-tsc",
-    "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "downlevelIteration": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "target": "es2015",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom"
-    ],
-    "paths": {
-      "@pascaliske/dynamic-components": [
-        "dist/dynamic-components"
-      ],
-      "@pascaliske/dynamic-components/*": [
-        "dist/dynamic-components/*"
-      ]
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.base.json"
+    },
+    {
+      "path": "./src/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/dynamic-components/tsconfig.lib.json"
     }
-  }
+  ]
 }
