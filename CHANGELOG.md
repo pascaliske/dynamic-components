@@ -1,3 +1,18 @@
+# [2.1.0](https://github.com/pascaliske/dynamic-components/compare/v2.0.0...v2.1.0) (2020-06-28)
+
+
+### Bug Fixes
+
+* fix component children rendering ([34a0d3f](https://github.com/pascaliske/dynamic-components/commit/34a0d3fe359998d27bb8466434230c6acc1b51a2))
+
+
+### Features
+
+* add section component to demo app for testing children rendering ([18737ba](https://github.com/pascaliske/dynamic-components/commit/18737baff9d352db3b10b9fc8076561013780df1))
+* upgrade to angular v10 ([16afd82](https://github.com/pascaliske/dynamic-components/commit/16afd829dc5de2495db6dd4dbc46ad53f7e67752))
+
+
+
 # [2.0.0](https://github.com/pascaliske/dynamic-components/compare/v1.1.2...v2.0.0) (2020-04-14)
 
 
