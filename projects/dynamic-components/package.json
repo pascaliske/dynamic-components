@@ -1,7 +1,7 @@
 {
   "name": "@pascaliske/dynamic-components",
   "description": "Easier dynamic component injections in Angular 6+.",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "license": "MIT",
   "author": {
     "name": "Pascal Iske",
@@ -19,7 +19,10 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@angular/common": "^7.0.0 || ^8.0.0 || ^9.0.0",
-    "@angular/core": "^7.0.0 || ^8.0.0 || ^9.0.0"
+    "@angular/common": "^8.0.0 || ^9.0.0 || ^10.0.0",
+    "@angular/core": "^8.0.0 || ^9.0.0 || ^10.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
   }
 }

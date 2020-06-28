@@ -8,7 +8,7 @@ import {
 } from '@angular/core'
 // tslint:disable-next-line:no-duplicate-imports
 import { OnInit, ComponentRef, ɵComponentType } from '@angular/core'
-import { upperFirst, camelCase, reverse } from './helpers'
+import { upperFirst, camelCase } from './helpers'
 
 /**
  * Interface describing a component to be dynamically created.
@@ -56,7 +56,7 @@ export class DynamicComponentsComponent implements OnInit {
     public ngOnInit(): void {
         this.viewContainerRef.clear()
 
-        this.resolveAllComponents(reverse(this.components)).then(() => {
+        this.resolveAllComponents(this.components).then(() => {
             this.ready.next()
             this.ready.complete()
         })
@@ -68,10 +68,14 @@ export class DynamicComponentsComponent implements OnInit {
      * @param items - An array of manifests to render
      * @returns A Promise which resolves if all given manifests are rendered
      */
-    private async resolveAllComponents(items: ComponentManifest[]): Promise<any> {
+    private async resolveAllComponents(items: ComponentManifest[] = []): Promise<HTMLElement[]> {
+        const results: HTMLElement[] = []
+
         for (const item of items) {
-            await this.resolveComponent(item)
+            results.push(await this.resolveComponent(item))
         }
+
+        return results
     }
 
     /**
@@ -83,9 +87,9 @@ export class DynamicComponentsComponent implements OnInit {
     private async resolveComponent({
         importer,
         componentName,
-        params,
-        children,
-    }: ComponentManifest): Promise<any> {
+        params = {},
+        children = [],
+    }: ComponentManifest): Promise<HTMLElement> {
         const id: string = this.formatComponentName(componentName)
         const { [id]: component }: Record<string, ɵComponentType<any>> = await importer()
 
@@ -95,25 +99,21 @@ export class DynamicComponentsComponent implements OnInit {
         }
 
         // pre resolve children components
-        if (children?.length > 0) {
-            children = await this.resolveAllComponents(children)
-        }
+        const nodes: HTMLElement[] = await this.resolveAllComponents(children)
 
         // resolve actual factory and create its component
         const factory = this.componentFactoryResolver.resolveComponentFactory(component)
         const ref: ComponentRef<any> = this.viewContainerRef.createComponent(
             factory,
-            0,
             undefined,
-            [children?.filter(Boolean) ?? []],
+            undefined,
+            [nodes],
         )
 
         // inject params to instance
-        if (Object.keys(params)?.length > 0) {
-            for (const key in params) {
-                if (params?.hasOwnProperty(key)) {
-                    ref.instance[key] = params?.[key]
-                }
+        for (const key in params) {
+            if (params?.hasOwnProperty(key)) {
+                ref.instance[key] = params?.[key]
             }
         }
 
