@@ -47,7 +47,7 @@
     "@angular-devkit/build-ng-packagr": "~0.1000.0",
     "@angular/cli": "~10.0.0",
     "@angular/compiler-cli": "^10.0.1",
-    "@angular/language-service": "^10.0.1",
+    "@angular/language-service": "^10.0.2",
     "@commitlint/cli": "^9.0.1",
     "@commitlint/config-conventional": "^9.0.1",
     "@types/lodash-es": "^4.17.3",
