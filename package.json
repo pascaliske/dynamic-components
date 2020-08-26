@@ -58,7 +58,7 @@
     "lint-staged": "^10.2.13",
     "ng-packagr": "^10.0.4",
     "prettier": "^2.1.1",
-    "rxjs-tslint-rules": "^4.34.0",
+    "rxjs-tslint-rules": "^4.34.1",
     "standard-changelog": "^2.0.24",
     "ts-node": "~9.0.0",
     "tslint": "~6.1.3",
