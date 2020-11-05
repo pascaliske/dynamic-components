@@ -8637,10 +8637,10 @@ rxjs-report-usage@^1.0.4:
     glob "~7.1.6"
     prompts "~2.3.2"
 
-rxjs-tslint-rules@^4.34.3:
-  version "4.34.3"
-  resolved "https://registry.yarnpkg.com/rxjs-tslint-rules/-/rxjs-tslint-rules-4.34.3.tgz#122a2cc2e112ea7cd96b6bbbfc228868941df6bb"
-  integrity sha512-5bv7wS+YbhAclcaRPDTbMhL668FpWB5C44mY+/2dOYPCXWpxkqmg9PdM7Hwe7+yoR2UmwuElQ0qf1pCR2ANxuA==
+rxjs-tslint-rules@^4.34.4:
+  version "4.34.4"
+  resolved "https://registry.yarnpkg.com/rxjs-tslint-rules/-/rxjs-tslint-rules-4.34.4.tgz#0bc64859b4fd2f35ed16a0a56722612d239e2853"
+  integrity sha512-SGVYH3QZ8baDYDtyD40zFymK+mF8AAYZz5oqPx/3XjigZfv2DBv0VQkmZX6Dvubg8QcYQbhIOrVWeaiDUxwqCg==
   dependencies:
     "@phenomnomnominal/tsquery" "^4.0.0"
     decamelize "^4.0.0"
