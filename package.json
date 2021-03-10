@@ -29,7 +29,7 @@
     "unlink": "cd dist/dynamic-components && yarn unlink"
   },
   "dependencies": {
-    "@angular/animations": "^10.0.1",
+    "@angular/animations": "^11.2.5",
     "@angular/common": "^10.0.1",
     "@angular/compiler": "^10.0.1",
     "@angular/core": "^10.0.1",
