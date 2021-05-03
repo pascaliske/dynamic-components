@@ -18,6 +18,7 @@
   "private": true,
   "scripts": {
     "ng": "ng",
+    "prepare": "husky install",
     "start": "ng serve dynamic-components-demo",
     "build": "ng build --prod",
     "postbuild": "cp README.md dist/dynamic-components/README.md && cp LICENSE.md dist/dynamic-components/LICENSE.md && cp CHANGELOG.md dist/dynamic-components/CHANGELOG.md",
