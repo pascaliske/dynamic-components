@@ -75,4 +75,4 @@ You can view a quick demo [here](https://stackblitz.com/github/pascaliske/dynami
 
 ## License
 
-MIT © 2020 [Pascal Iske](https://pascal-iske.de)
+MIT © 2020 [Pascal Iske](https://pascaliske.dev)
