@@ -22,7 +22,6 @@
     "start": "ng serve dynamic-components-demo",
     "build": "ng build --configuration production",
     "postbuild": "cp README.md dist/dynamic-components/README.md && cp LICENSE.md dist/dynamic-components/LICENSE.md && cp CHANGELOG.md dist/dynamic-components/CHANGELOG.md",
-    "lint": "ng lint",
     "format": "prettier --write \"{src,projects}/**/*.ts\"",
     "version": "bump --yes package.json projects/dynamic-components/package.json",
     "changelog": "standard-changelog",
@@ -58,11 +57,8 @@
     "lint-staged": "^12.4.2",
     "ng-packagr": "^13.3.1",
     "prettier": "^2.6.2",
-    "rxjs-tslint-rules": "^4.34.8",
     "standard-changelog": "^2.0.27",
     "ts-node": "~10.8.0",
-    "tslint": "~6.1.3",
-    "tslint-config-prettier": "^1.18.0",
     "typescript": "~4.5.5"
   }
 }

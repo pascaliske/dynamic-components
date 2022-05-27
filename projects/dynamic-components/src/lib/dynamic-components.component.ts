@@ -6,7 +6,6 @@ import {
     ViewContainerRef,
     ComponentFactoryResolver,
 } from '@angular/core'
-// tslint:disable-next-line:no-duplicate-imports
 import { OnInit, ComponentRef, ɵComponentType } from '@angular/core'
 import { upperFirst, camelCase } from './helpers'
 

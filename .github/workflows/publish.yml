@@ -19,7 +19,6 @@ jobs:
       - run: yarn install --frozen-lockfile
 
       # build
-      - run: yarn run lint
       - run: yarn run build
 
       # publish

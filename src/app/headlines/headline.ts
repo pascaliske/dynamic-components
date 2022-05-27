@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core'
 
-@Component({ template: '' }) // tslint:disable-next-line:component-class-suffix
+@Component({ template: '' })
 export class Headline {
     @Input()
     public text: string
