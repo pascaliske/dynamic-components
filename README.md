@@ -1,6 +1,6 @@
 # `@pascaliske/dynamic-components`
 
-[![npm (scoped)](https://img.shields.io/npm/v/@pascaliske/dynamic-components.svg?style=flat-square)](https://www.npmjs.com/package/@pascaliske/dynamic-components) [![GitHub Tag](https://img.shields.io/github/tag/pascaliske/dynamic-components.svg?style=flat-square)](https://github.com/pascaliske/dynamic-components) [![Build Status](https://img.shields.io/github/workflow/status/pascaliske/dynamic-components/Test%20package/master?label=test&style=flat-square)](https://github.com/pascaliske/dynamic-components/actions) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=pascaliske/dynamic-components)](https://dependabot.com) [![Awesome Badges](https://img.shields.io/badge/badges-awesome-green.svg?style=flat-square)](https://github.com/Naereen/badges)
+[![npm (scoped)](https://img.shields.io/npm/v/@pascaliske/dynamic-components.svg?style=flat-square)](https://www.npmjs.com/package/@pascaliske/dynamic-components) [![GitHub Tag](https://img.shields.io/github/tag/pascaliske/dynamic-components.svg?style=flat-square)](https://github.com/pascaliske/dynamic-components) [![Build Status](https://img.shields.io/github/workflow/status/pascaliske/dynamic-components/Test%20package/master?label=test&style=flat-square)](https://github.com/pascaliske/dynamic-components/actions) [![Awesome Badges](https://img.shields.io/badge/badges-awesome-green.svg?style=flat-square)](https://github.com/Naereen/badges)
 
 ## Installation
 
@@ -75,4 +75,4 @@ You can view a quick demo [here](https://stackblitz.com/github/pascaliske/dynami
 
 ## License
 
-MIT © 2020 [Pascal Iske](https://pascaliske.dev)
+MIT © 2022 [Pascal Iske](https://pascaliske.dev)
